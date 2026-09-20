@@ -25,7 +25,7 @@ class MemoOut(BaseModel):    # 응답 본문: 서버가 돌려주는 데이터
 
 # ── 인메모리 저장소 (리스트에 저장 → 서버 끄면 사라짐) ──
 # 서버가 다시 시작되면 목록이 비므로, 안내용 기본 메모 하나를 미리 넣어 둔다.
-memos: list[dict] = [{"id": 1, "content": "위 링크를 클릭하시면 개인 소개 페이지가 보입니다."}]
+memos: list[dict] = [{"id": 1, "content": "[default 기본 메모] 위 링크를 클릭하시면 개인 소개 페이지가 보입니다."}]
 next_id = 2
 
 @app.get("/memos", response_model=list[MemoOut])
